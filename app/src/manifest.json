@@ -1,0 +1,53 @@
+{
+ "name": "Digibank",
+ "short_name": "Digibank",
+ "theme_color": "#d66422",
+ "background_color": "#F8931F",
+ "start_url": "/",
+ "display": "standalone",
+ "orientation": "portrait",
+ "icons": [
+   {
+     "src": "/assets/images/favicons/favicon-32x32.png",
+     "sizes": "32x32",
+     "type": "image/png",
+     "density": "0.75"
+   },
+   {
+     "src": "/assets/images/favicons/favicon-72x72.png",
+     "sizes": "72x72",
+     "type": "image/png",
+     "density": "1.0"
+   },
+   {
+     "src": "/assets/images/favicons/favicon-96x96.png",
+     "sizes": "96x96",
+     "type": "image/png",
+     "density": "1.5"
+   },
+   {
+     "src": "/assets/images/favicons/favicon-144x144.png",
+     "sizes": "144x144",
+     "type": "image/png",
+     "density": "2.0"
+   },
+   {
+     "src": "/assets/images/favicons/favicon-196x196.png",
+     "sizes": "196x196",
+     "type": "image/png",
+     "density": "3.0"
+   },
+   {
+    "src": "/assets/images/favicons/favicon-310x310.png",
+    "sizes": "310x310",
+    "type": "image/png",
+    "density": "4.0"
+   },
+   {
+    "src": "/assets/images/favicons/favicon-512x512.png",
+    "sizes": "512x512",
+    "type": "image/png",
+    "density": "4.0"
+   }
+ ]
+}
