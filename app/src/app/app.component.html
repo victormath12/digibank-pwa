@@ -1,7 +1,43 @@
-<div style="text-align:center">
-  <h1 style="font-family:Arial;color:#fff;">
-    Bem vindo ao {{ title }}_
-  </h1>
-</div>
+<header class="header">
+  <span class="header-before">
+    <i class="material-icons">keyboard_arrow_left</i>
+  </span>
+  <span class="header-title">Digibank</span>
+  <span class="header-after"></span>
+</header>
 
+<main>
 
+  <section class="page-title">
+    <h1>Seja Bem Vindo</h1>
+    <h2>ao seu banco digital_</h2>
+  </section>
+  
+  <section class="card">
+    <span class="card-before">
+      <i class="material-icons">reorder</i>
+    </span>
+    <span class="card-content">
+      <h3 class="card-title">
+        Pagamento por Código de Barras
+      </h3>
+    </span>
+    <input type="file" accept="image/*" id="capture" capture="camera" (change)="onCapture($event)"> 
+  </section>
+
+  <section class="card">
+    <span class="card-before">
+      <i class="material-icons">payment</i>
+    </span>
+    <span class="card-content">
+      <h3 class="card-title">
+        Minhas faturas do Cartão de Crédito
+      </h3>
+    </span>
+  </section>
+
+  <span class="alert" [hidden]="!alertMsg" (click)="hideAlert()">
+    {{ alertMsg }}
+  </span>
+
+</main>
