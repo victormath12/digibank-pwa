@@ -1,12 +1,20 @@
-<div class="camera-content">
-  <div [hidden]="showVideo">
-    <video #camera class="camera" autoplay playsinline></video>
+<section class="content">
+  <div class="camera-content">
+    <div [hidden]="showVideo" class="camera-mask"></div>
+    <div [hidden]="showVideo">
+      <video #camera class="camera" autoplay playsinline></video>
+    </div>
+    <div [hidden]="!showVideo">
+      <canvas #viewer></canvas>
+    </div>
   </div>
-  <div [hidden]="!showVideo">
-    <canvas #viewer></canvas>
-  </div>
-  <div [hidden]="showVideo" class="camera-mask"></div>
-</div>
 
-<button [hidden]="showVideo" id="snap" (click)="takePicture()">Snap Photo</button>
-<button [hidden]="!showVideo" id="save" (click)="savePicture()">Save Photo</button>
+  <button [hidden]="showVideo" class="buttonCamera" (click)="takePicture()">
+    <i class="material-icons">camera_alt</i>
+  </button>
+  
+  <button [hidden]="!showVideo" (click)="savePicture()">
+
+  </button>
+
+</section>

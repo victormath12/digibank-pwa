@@ -7,18 +7,6 @@ import { Component, OnInit, AfterViewInit, ViewChild, ViewChildren, ElementRef, 
 })
 export class AppComponent implements OnInit {
 
-  alertMsg: string;
-
-  title = 'Digibank';
-
   ngOnInit () { }
-
-  onCapture (capture) {
-    this.alertMsg = 'Imagem Capturada: ' + capture.target.value;
-  }
-
-  hideAlert () {
-    this.alertMsg = undefined;
-  }
 
 }

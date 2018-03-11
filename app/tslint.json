@@ -120,12 +120,13 @@
     "directive-selector": [
       true,
       "attribute",
+      "",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "kebab-case"
+      ""
     ],
     "no-output-on-prefix": true,
     "use-input-property-decorator": true,

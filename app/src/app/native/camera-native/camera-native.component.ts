@@ -13,7 +13,7 @@ export class CameraNativeComponent implements OnInit, AfterViewInit {
 
   @ViewChild('viewer')
   canvas: any;
-  
+
   private context: any;
   private browser = <any>navigator;
 
@@ -35,7 +35,7 @@ export class CameraNativeComponent implements OnInit, AfterViewInit {
   }
 
   takePicture() {
-    this.context.drawImage(this.videoPlayer.nativeElement, 0, 0, 200, 200);
+    this.context.drawImage(this.videoPlayer.nativeElement, 0, 0, 300, 150);
     this.showVideo = true;
   }
 

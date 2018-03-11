@@ -1,0 +1,26 @@
+.content {
+ width: 100%;
+ height: 100%;
+ position: fixed;
+ float: left;
+ background-image: url('../../../assets/images/bg.jpg');
+ background-size: cover;
+ background-repeat: no-repeat;
+ z-index: 0;
+}
+
+.button-login {
+ width: 100%;
+ padding: 24px 0px;
+ margin-bottom: 20px;
+ background: #FFF;
+ border: none;
+ display: block;
+ position: absolute;
+ z-index: 50;
+ bottom: 0;
+ color: #F36F00;
+ font-family: 'Roboto', Arial, Helvetica, sans-serif;
+ font-size: 1.3rem;
+ font-weight: 300;
+}

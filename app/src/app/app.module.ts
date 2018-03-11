@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppComponent } from './app.component';
 
 import { environment } from '../environments/environment';
-import { CameraNativeModule } from './native/camera-native/camera-native.module';
+
+import { AppRouting } from './app.routing';
+import { LoginModule } from './pages/login/login.module';
 
 @NgModule({
   declarations: [
@@ -14,11 +15,9 @@ import { CameraNativeModule } from './native/camera-native/camera-native.module'
   ],
   imports: [
     BrowserModule,
-    CameraNativeModule,
+    LoginModule,
+    AppRouting,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
-  ],
-  exports: [
-    CameraNativeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

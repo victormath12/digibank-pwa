@@ -1,27 +1,57 @@
+.content {
+ width: 100%;
+ height: 100%;
+ position: fixed;
+ float: left;
+ background: #000;
+ z-index: 0;
+}
+
 .camera-content {
- width: 80%;
- height: 300px;
- margin: auto;
- border: 6px solid #6A6E7C;
+ width: 100%;
+ height: 100%;
+ position: relative;
+ float: left;
 }
 
 .camera {
  width: 100%;
- height: 100%;
+ height: 100%
 }
 
 .camera-mask {
  width: 100%;
- height: 300px;
+ height: 100%;
  background-image: url('../../../assets/images/people.png');
- background-size: 80% 66%;
+ background-size: 90%;
  background-repeat: no-repeat;
  background-position: center;
- position: relative;
- bottom: 58%;
+ position: absolute;
+ top: 0;
 }
 
 canvas {
  width: 100%;
- height: 300px;
+ height: 100%;
+}
+
+.buttonCamera {
+ padding: 12px;
+ margin-bottom: 20px;
+ background: #F36F00;
+ border:none;
+ border-radius: 49%;
+ display: block;
+ position: absolute;
+ z-index: 50;
+ bottom: 0;
+ left: 41%;
+ -webkit-box-shadow: 0px 7px 46px 0px rgba(0,0,0,0.75);
+ -moz-box-shadow: 0px 7px 46px 0px rgba(0,0,0,0.75);
+ box-shadow: 0px 7px 46px 0px rgba(0,0,0,0.75);
+}
+
+.buttonCamera i{
+ font-size: 3rem;
+ color:#fff;
 }
