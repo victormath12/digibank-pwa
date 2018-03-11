@@ -1,0 +1,27 @@
+.camera-content {
+ width: 80%;
+ height: 300px;
+ margin: auto;
+ border: 6px solid #6A6E7C;
+}
+
+.camera {
+ width: 100%;
+ height: 100%;
+}
+
+.camera-mask {
+ width: 100%;
+ height: 300px;
+ background-image: url('../../../assets/images/people.png');
+ background-size: 80% 66%;
+ background-repeat: no-repeat;
+ background-position: center;
+ position: relative;
+ bottom: 58%;
+}
+
+canvas {
+ width: 100%;
+ height: 300px;
+}

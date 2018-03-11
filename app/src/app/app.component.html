@@ -36,6 +36,15 @@
     </span>
   </section>
 
+  <!--
+  <div class="camera-content">
+    <video #video class="camera" autoplay></video>
+    <div class="camera-mask"></div>
+  </div>
+  -->
+
+  <camera-native></camera-native>
+
   <span class="alert" [hidden]="!alertMsg" (click)="hideAlert()">
     {{ alertMsg }}
   </span>
