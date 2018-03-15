@@ -3,6 +3,9 @@
 Imagine a Digital Bank, where you can create your account easily and explore all services that you need!
 This is a simple project concept using PWA (Progressive Web Apps) technology, where you can access and add the webapp in your home screen.
 
+![alt text](https://raw.githubusercontent.com/victormath12/digibank-pwa/master/screencapture-localhost-3200-2018-03-14-23_45_31.png "Home Screen")
+![alt text](https://raw.githubusercontent.com/victormath12/digibank-pwa/master/screencapture-localhost-3200-home-2018-03-14-23_47_11.png "Menu Screen")
+
 ## Main Values
 
 The focus of this project is proofa simple concept: 
