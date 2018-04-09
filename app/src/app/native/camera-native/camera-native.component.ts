@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, AfterViewInit, Input, Output } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -14,15 +15,19 @@ export class CameraNativeComponent implements OnInit, AfterViewInit {
   @ViewChild('viewer')
   canvas: any;
 
+  @Output()
+  outputImage = new EventEmitter<any>();
+
   private context: any;
   private browser = <any>navigator;
 
-  showVideo: any = false;
+  photoTaked = false;
   isSupportUserMedia: boolean;
   isSupportWebRTC: boolean;
   listCameras: any;
+  imageBase64: any;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.verifyBrowserSupport();
@@ -35,22 +40,15 @@ export class CameraNativeComponent implements OnInit, AfterViewInit {
   }
 
   takePicture() {
-    this.context.drawImage(this.videoPlayer.nativeElement, 0, 0, 300, 150);
-    this.showVideo = true;
+    this.photoTaked = true;
+    this.imageBase64 = this.canvas.nativeElement.toDataURL('img/png');
+    this.outputImage.emit({
+      picture: this.imageBase64
+    });
   }
 
-  savePicture() {
-    this.showVideo = false;
-    let imgData: any = this.canvas.nativeElement.toDataURL('img/png');
-    imgData = imgData.replace('data:image/png;base64,', '');
-    const picture = {
-      imageBase64: imgData,
-      camera: 'frontal',
-      userMedia: 'user',
-      time: '22:22pm'
-    };
-    console.log(picture);
-
+  closeCamera() {
+    this.router.navigate(['/home']);
   }
 
   getListCameras() {
@@ -59,8 +57,6 @@ export class CameraNativeComponent implements OnInit, AfterViewInit {
        this.listCameras = callback;
      });
   }
-
-  changeCamera() { }
 
   private initCamera() {
     this.context = this.canvas.nativeElement.getContext('2d');

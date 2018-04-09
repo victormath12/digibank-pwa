@@ -1,20 +1,21 @@
 <section class="content">
   <div class="camera-content">
-    <div [hidden]="showVideo" class="camera-mask"></div>
-    <div [hidden]="showVideo">
+    <div [hidden]="photoTaked" class="camera-mask"></div>
+    <div [hidden]="photoTaked">
       <video #camera class="camera" autoplay playsinline></video>
     </div>
-    <div [hidden]="!showVideo">
-      <canvas #viewer></canvas>
+    <div [hidden]="!photoTaked">
+      <canvas #viewer [hidden]="photoTaked"></canvas>
+      <p class="resultBase64">{{ imageBase64 }}</p>
     </div>
   </div>
-
-  <button [hidden]="showVideo" class="buttonCamera" (click)="takePicture()">
+  
+  <button [hidden]="photoTaked" class="buttonCamera" (click)="takePicture()">
     <i class="material-icons">camera_alt</i>
   </button>
-  
-  <button [hidden]="!showVideo" (click)="savePicture()">
 
+  <button [hidden]="!photoTaked" class="buttonCamera" (click)="closeCamera()">
+    <i class="material-icons">close</i>
   </button>
 
 </section>

@@ -41,7 +41,6 @@ canvas {
  background: #F36F00;
  border:none;
  border-radius: 49%;
- display: block;
  position: absolute;
  z-index: 50;
  bottom: 0;
@@ -54,4 +53,11 @@ canvas {
 .buttonCamera i{
  font-size: 3rem;
  color:#fff;
+}
+
+.resultBase64 {
+ padding:20px;
+ font-size: 10px;
+ color: #fff;
+ word-wrap: break-word;
 }
