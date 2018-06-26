@@ -1,0 +1,29 @@
+
+.alert {
+ width: 83%;
+ overflow: hidden;
+ margin: 14px 0px;
+ padding: 15px;
+ background: #F36F00;
+ color: #fff;
+ border: 1px solid #ca5f06;
+ border-radius: 5px;
+ position: absolute;
+ z-index: 10;
+ bottom: 0;
+}
+
+
+.list {
+  background: #fff;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom:1px solid #EEE;
+  // border-left:6px solid #F36F00;
+
+  .list-icon {
+    font-size: 30px;
+    color: #FC4A1A;
+  }
+
+}

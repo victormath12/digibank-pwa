@@ -1,3 +1,17 @@
 <section class="content">
- <button class="button-login" routerLink="home">Acessar Minha Conta</button>
+
+ <digi-header [transparent]="true" label="digibank" [returnTo]="'/'"></digi-header>
+
+ <digi-button 
+    [label]="'Entrar com minha Conta'"
+    [type]="'default'" 
+    [rounded]="false"
+    (onClickButton)="navigateToHome()"></digi-button>
+
+<digi-button 
+    [label]="'Abrir uma nova Conta'"
+    [type]="'blank'" 
+    [rounded]="false"
+    (onClickButton)="navigateToHome()"></digi-button>
+
 </section>

@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,500,700,900');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+$font-base: 'Roboto', sans-serif;
+
+body {
+  font-family: $font-base;
+}
+
+h1,.font-h1 {
+  font-family: $font-base;
+  font-size: 24px;
+}
+
+.font-h1x {
+  font-family: $font-base;
+  font-size: 30px;
+}
+
+h2,.font-h2 {
+  font-family: $font-base;
+  font-size: 20px;
+}
+
+h3,.font-h3 {
+  font-family: $font-base;
+  font-size: 18px;
+}
+
+h4,.font-h4 {
+  font-family: $font-base;
+  font-size: 16px;
+}
+
+p,.font-p {
+  font-family: $font-base;
+  font-size: 14px;
+}
+
+.font-light { font-weight: 300 }
+.font-normal { font-weight: 500 }
+.font-bold { font-weight: 700 }
+.font-strong { font-weight: 900 }
+
+.font-align-left{text-align: left}
+.font-align-center{text-align: center}
+.font-align-right{text-align: right}

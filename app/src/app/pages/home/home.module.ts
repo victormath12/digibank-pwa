@@ -4,11 +4,13 @@ import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home.routing';
 
 import { PushNotificationService } from '../../native/push-notification/push-notification-service.service';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SharedModule
   ],
   declarations: [
     HomeComponent

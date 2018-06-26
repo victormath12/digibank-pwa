@@ -1,0 +1,33 @@
+@import '../../../../styles.scss';
+
+%button-core {
+  width: 100%;
+  padding: 24px 0px;
+  border: none;
+  display: block;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.default {
+  @extend %button-core;
+  background: $gradient-primary;
+  color: #FFF;
+}
+
+.blank {
+  @extend %button-core;
+  background: #FFF;
+  color: $color-primary;
+}
+
+.border-rounded {
+  border-radius: 30px;
+  box-shadow: 0px 6px 25px -6px rgba(0,0,0,0.30);
+}
+
+.button-light {
+  padding: 12px 0px;
+  font-size: 1rem;
+}

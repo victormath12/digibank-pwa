@@ -1,16 +1,85 @@
-<header class="header">
-    <span class="header-before" (click)="gotoLogin()">
-      <i class="material-icons">keyboard_arrow_left</i>
-    </span>
-    <span class="header-title">Digibank</span>
-    <span class="header-after"></span>
-  </header>
-  
+<section class="box-row top-xs" style="background:linear-gradient(-60deg, #FC4A1A 0%, #F36F00 100%);padding-bottom:30px; ">
+
+  <digi-header 
+    label="meu digibank"
+    [transparent]="true"
+    [returnTo]="'/'"></digi-header>
+
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:40px;">
+    <div class="box-row middle-xs">
+      <h1 class="font-h3 font-light color-white">seja bem vindo,</h1>
+      <h1 class="font-h1x font-light color-white">Victor Caetano_</h1>
+    </div>
+  </div>
+
+</section>
+
+<section class="container-fluid">
+  <div class="row">
+
+    <section class="col-lg-8 col-md-6 col-sm-12 col-xs-12 no-padding" style="background: #fff;">
+      
+    </section>
+
+    <section class="col-lg-4 col-md-6 col-sm-12 col-xs-12 no-padding">
+
+    <div class="list">
+        <div class="container-fluid no-padding">
+          <div class="row middle-xs no-margin">
+            <section class="col-lg col-md col-sm col-xs center-xs">
+              <h1 class="font-h4 font-light color-dark-gray">seu saldo atual</h1>
+              <h1 class="font-h1 font-normal color-dark-gray">R$ 1.200,00</h1>
+            </section> 
+          </div>
+        </div> 
+      </div>
+
+      <div class="list" *ngFor="let item of list">
+        <div class="container-fluid no-padding">
+          <div class="row middle-xs no-margin">
+            <section class="col-lg-2 col-md-2 col-sm-2 col-xs-2 center-xs" (click)="onClickIconBack()">
+              <i class="list-icon material-icons">{{ item.iconLeft }}</i>
+            </section>
+            <section class="col-lg col-md col-sm col-xs start-xs">
+              <h1 class="font-h4 font-light color-dark-gray">{{ item.title }}</h1>
+              <h1 class="font-h1 font-normal color-dark-gray">{{ item.subtitle }}</h1>
+            </section> 
+          </div>
+       </div> 
+      </div>
+
+    </section>
+
+  </div>
+</section>
+
+<!-- 
+<span class="alert" (click)="hideAlert()"> Teste de Alerta </span> -->
+
+
+<!-- 
 <main>
 
   <section class="page-title">
-    <h1>Seja Bem Vindo, {{ usuarioLogado?.nome }}</h1>
-    <h2>ao seu banco digital_</h2>
+    <h1>Seja Bem Vindo,</h1>
+    <h2>Victor Caetano_</h2>
+  </section>
+
+  <section class="card">
+    <span class="card-content">
+      <h3 class="font-h4 font-bold font-align-left">
+        saldo em <br> conta corrente
+      </h3>
+      <h3 class="font-h1 font-normal color-green font-align-left">
+        R$ 500,00
+      </h3>
+    </span>
+  </section>
+
+  <section>
+    <h3 class="font-h4 font-bold font-align-left color-half-gray">
+      o que você deseja fazer?
+    </h3>
   </section>
   
   <section class="card">
@@ -36,13 +105,13 @@
     </span>
   </section>
 
-  <section class="card" (click)="login()">
+  <section class="card" routerLink="/camera-capture">
     <span class="card-before">
-      <i class="material-icons">verified_user</i>
+      <i class="material-icons">account_circle</i>
     </span>
     <span class="card-content">
       <h3 class="card-title">
-        Login com Google Account
+        Pagar boleto por código de barras
       </h3>
     </span>
   </section>
@@ -62,4 +131,11 @@
     {{ alertMsg }}
   </span>
 
-</main>
+
+  <digi-button 
+    [label]="'Entrar com minha Conta'"
+    [type]="'default'" 
+    [rounded]="true"
+    [light]="true"></digi-button>
+
+</main> -->

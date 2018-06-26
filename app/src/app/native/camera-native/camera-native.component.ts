@@ -1,13 +1,15 @@
 import { Component, OnInit, ViewChild, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { CameraService } from '../../shared/native-features/camera-service/camera.service';
 
 @Component({
-  // tslint:disable-next-line:component-selector
   selector: 'camera-native',
   templateUrl: './camera-native.component.html',
-  styleUrls: ['./camera-native.component.css']
+  styleUrls: ['./camera-native.component.scss']
 })
-export class CameraNativeComponent implements OnInit, AfterViewInit {
+export class CameraNativeComponent implements AfterViewInit {
+
+  @Input()
+  maskType: any;
 
   @ViewChild('camera')
   videoPlayer: any;
@@ -18,68 +20,34 @@ export class CameraNativeComponent implements OnInit, AfterViewInit {
   @Output()
   outputImage = new EventEmitter<any>();
 
-  private context: any;
-  private browser = <any>navigator;
+  contextCanvas: any;
 
   photoTaked = false;
-  isSupportUserMedia: boolean;
-  isSupportWebRTC: boolean;
-  listCameras: any;
-  imageBase64: any;
 
-  constructor(private router: Router) { }
-
-  ngOnInit() {
-    this.verifyBrowserSupport();
-    console.log(this.isSupportUserMedia);
-    console.log(this.isSupportWebRTC);
-  }
+  constructor(private cameraService: CameraService) { }
 
   ngAfterViewInit() {
     this.initCamera();
   }
 
-  takePicture() {
+  takePhoto() {
     this.photoTaked = true;
-    this.imageBase64 = this.canvas.nativeElement.toDataURL('img/png');
     this.outputImage.emit({
-      picture: this.imageBase64
+      photoTaked: true,
+      imageBase64: this.contextCanvas.toDataURL('img/png')
     });
   }
 
-  closeCamera() {
-    this.router.navigate(['/home']);
-  }
-
-  getListCameras() {
-    navigator.mediaDevices.enumerateDevices().then(callback => {
-       console.log(callback);
-       this.listCameras = callback;
-     });
-  }
-
   private initCamera() {
-    this.context = this.canvas.nativeElement.getContext('2d');
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices.getUserMedia({ video: true })
-        .then(stream => {
-          this.videoPlayer.nativeElement.src = stream;
-          this.videoPlayer.nativeElement.srcObject = stream;
-          this.videoPlayer.nativeElement.play();
-        });
-    }
-  }
-
-  private verifyBrowserSupport() {
-    this.isSupportUserMedia = this.getBrowserUserMedia() != null ? true : false;
-    this.isSupportWebRTC = !!(this.browser.mediaDevices && this.browser.mediaDevices.getUserMedia);
-  }
-
-  private getBrowserUserMedia() {
-    return this.browser.getUserMedia
-    || this.browser.webkitGetUserMedia
-    || this.browser.mozGetUserMedia
-    || this.browser.msGetUserMedia;
-  }
+    this.contextCanvas = this.canvas.nativeElement.getContext('2d');
+    this.cameraService.initCameraStream()
+      .then(stream => {
+        this.videoPlayer.nativeElement.src = stream;
+        this.videoPlayer.nativeElement.srcObject = stream;
+        this.videoPlayer.nativeElement.play();
+      }).catch(error => {
+        alert('[Ocorreu um erro]: ' + error);
+      });
+  } 
 
 }
