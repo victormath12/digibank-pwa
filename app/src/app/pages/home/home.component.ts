@@ -12,43 +12,19 @@ export class HomeComponent implements OnInit {
 
   message: any;
 
-  list: Array<any>;
+  menuList: Array<any>;
 
   constructor(private router: Router) {}
 
   ngOnInit() {
-
-    this.list = [
-      {
-        iconLeft: 'crop_free',
-        title: 'Pagar Boleto com scanner',
-      },
-      {
-        iconLeft: 'vertical_align_top',
-        title: 'Transferir dinheiro',
-      },
-      {
-        iconLeft: 'vertical_align_bottom',
-        title: 'Receber dinheiro',
-      },
-      {
-        iconLeft: 'credit_card',
-        title: 'Meus gastos no cartão',
-      },
-      {
-        iconLeft: 'location_on',
-        title: 'Agências próximas a mim',
-      }
+    this.menuList = [
+      { iconLeft: 'profile', title: 'Meu Perfil', link: '/profile' },
+      { iconLeft: 'crop_free', title: 'Pagar Boleto com scanner', link: '/pay-bill' },
+      { iconLeft: 'vertical_align_top',title: 'Transferir dinheiro',link: '/send-money' },
+      { iconLeft: 'vertical_align_bottom', title: 'Receber dinheiro', link: '/receive-money' },
+      { iconLeft: 'credit_card', title: 'Meus gastos no cartão', link: '/' },
+      { iconLeft: 'location_on', title: 'Agências próximas a mim', link: '/near-branches' }
     ];
-
-  }
-
-  onCapture (capture) {
-    this.alertMsg = 'Imagem Capturada: ' + capture.target.value;
-  }
-
-  hideAlert () {
-    this.alertMsg = undefined;
   }
 
 }

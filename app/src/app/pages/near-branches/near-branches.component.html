@@ -1,0 +1,20 @@
+<digi-header label="agências" [returnTo]="'/home'"></digi-header>
+
+<section class="container-fluid">
+  <div class="row">
+    <section class="col-lg-4 col-md-6 col-sm-12 col-xs-12 no-padding">
+      <div class="card">
+        <div class="container-fluid no-padding">
+          <div class="row middle-xs no-margin">
+            <section class="col-lg col-md col-sm col-xs">
+              <h1 class="font-h2 font-normal">Onde estou:</h1>
+              <h3 class="font-h3 font-light">Minha Localização atual</h3>
+            </section>
+          </div>
+        </div> 
+      </div>
+      <h2 class="font-h2 font-normal">Agências em Santo André:</h2>
+      <digi-list [items]="branchList"></digi-list>
+    </section>
+  </div>
+</section>

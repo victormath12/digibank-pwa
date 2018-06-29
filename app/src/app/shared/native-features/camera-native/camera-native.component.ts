@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
-import { CameraService } from '../../shared/native-features/camera-service/camera.service';
+import { WebRTCService } from '..//web-rtc/web-rtc.service';
 
 @Component({
   selector: 'camera-native',
@@ -7,6 +7,9 @@ import { CameraService } from '../../shared/native-features/camera-service/camer
   styleUrls: ['./camera-native.component.scss']
 })
 export class CameraNativeComponent implements AfterViewInit {
+
+  @Input()
+  show: boolean;
 
   @Input()
   maskType: any;
@@ -24,7 +27,7 @@ export class CameraNativeComponent implements AfterViewInit {
 
   photoTaked = false;
 
-  constructor(private cameraService: CameraService) { }
+  constructor(private webRTC: WebRTCService) { }
 
   ngAfterViewInit() {
     this.initCamera();
@@ -40,7 +43,7 @@ export class CameraNativeComponent implements AfterViewInit {
 
   private initCamera() {
     this.contextCanvas = this.canvas.nativeElement.getContext('2d');
-    this.cameraService.initCameraStream()
+    this.webRTC.initCameraStream()
       .then(stream => {
         this.videoPlayer.nativeElement.src = stream;
         this.videoPlayer.nativeElement.srcObject = stream;

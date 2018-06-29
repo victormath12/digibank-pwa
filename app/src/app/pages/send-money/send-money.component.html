@@ -1,0 +1,38 @@
+<digi-header label="transferências" [returnTo]="'/home'"></digi-header>
+
+<section class="container-fluid">
+    <div class="row">
+
+      <section class="col-lg-4 col-md-6 col-sm-12 col-xs-12 no-padding">
+        <div class="card">
+          <div class="container-fluid no-padding">
+            <div class="row middle-xs no-margin">
+              <section class="col-lg col-md col-sm col-xs center-xs">
+                <form class="digi-form">
+                  <digi-input 
+                    [label]="'quanto deseja transferir?'"
+                    [prefix]="'R$'"
+                    [value]="'00,00'"></digi-input>
+                </form>
+              </section> 
+            </div>
+          </div> 
+        </div>
+      </section>
+
+      <section class="col-lg-4 col-md-6 col-sm-12 col-xs-12 no-padding">
+          
+        <digi-button 
+          [label]="'Tranferir Agora'"
+          [type]="'default'" 
+          [rounded]="true"
+          [light]="true"
+          (onClickButton)="showNotification('Teste Notification Fixo')"></digi-button>  
+
+
+          {{ message | async | json }}
+
+      </section>
+
+    </div>
+  </section>

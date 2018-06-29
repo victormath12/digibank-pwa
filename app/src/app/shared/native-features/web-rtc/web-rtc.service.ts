@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { throws } from 'assert';
 
 @Injectable()
-export class CameraService {
+export class WebRTCService {
 
   private browser = <any> navigator;
 

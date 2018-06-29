@@ -1,29 +1,26 @@
-<section class="box-row top-xs" style="background:linear-gradient(-60deg, #FC4A1A 0%, #F36F00 100%);padding-bottom:30px; ">
-
+<section class="welcome-page box-row top-xs">
+ 
   <digi-header 
     label="meu digibank"
     [transparent]="true"
     [returnTo]="'/'"></digi-header>
 
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:40px;">
+  <div class="welcome-page-title col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="box-row middle-xs">
       <h1 class="font-h3 font-light color-white">seja bem vindo,</h1>
       <h1 class="font-h1x font-light color-white">Victor Caetano_</h1>
     </div>
   </div>
-
+  
 </section>
 
 <section class="container-fluid">
   <div class="row">
-
     <section class="col-lg-8 col-md-6 col-sm-12 col-xs-12 no-padding" style="background: #fff;">
-      
+      <!-- Grafico Saldo -->
     </section>
-
     <section class="col-lg-4 col-md-6 col-sm-12 col-xs-12 no-padding">
-
-    <div class="list">
+      <div class="card">
         <div class="container-fluid no-padding">
           <div class="row middle-xs no-margin">
             <section class="col-lg col-md col-sm col-xs center-xs">
@@ -33,23 +30,8 @@
           </div>
         </div> 
       </div>
-
-      <div class="list" *ngFor="let item of list">
-        <div class="container-fluid no-padding">
-          <div class="row middle-xs no-margin">
-            <section class="col-lg-2 col-md-2 col-sm-2 col-xs-2 center-xs" (click)="onClickIconBack()">
-              <i class="list-icon material-icons">{{ item.iconLeft }}</i>
-            </section>
-            <section class="col-lg col-md col-sm col-xs start-xs">
-              <h1 class="font-h4 font-light color-dark-gray">{{ item.title }}</h1>
-              <h1 class="font-h1 font-normal color-dark-gray">{{ item.subtitle }}</h1>
-            </section> 
-          </div>
-       </div> 
-      </div>
-
+      <digi-list [items]="menuList"></digi-list>
     </section>
-
   </div>
 </section>
 

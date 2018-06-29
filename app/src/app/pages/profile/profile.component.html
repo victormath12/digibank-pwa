@@ -1,0 +1,42 @@
+<digi-header label="meu perfil" [returnTo]="'/home'"></digi-header>
+
+<section class="container-fluid">
+  <div class="row">
+    <section class="col-lg-4 col-md-6 col-sm-12 col-xs-12 no-padding">
+      <div class="card">
+        <div class="container-fluid no-padding">
+          <div class="row middle-xs no-margin">
+            <section class="col-lg col-md col-sm col-xs">
+              <h1 class="font-h2 font-normal">Minhas infos</h1>
+              <h3 class="font-h4 font-light">Nome: Victor Caetano</h3>
+              <h3 class="font-h4 font-light">Agencia: 1234</h3>
+              <h3 class="font-h4 font-light">Conta: 1234-8</h3>
+              <h3 class="font-h4 font-light">Cliente desde: 2012</h3>
+            </section>
+          </div>
+        </div> 
+      </div>
+      <div class="card">
+          <div class="container-fluid no-padding">
+            <div class="row middle-xs no-margin">
+              <section class="col-lg col-md col-sm col-xs">
+                <h1 class="font-h2 font-normal">Selfie de Perfil</h1>
+                <h2 class="font-h4 font-light">Ops, parece que você ainda não tem foto de perfil no nosso app, que tal dar aquele sorriso e tirar uma bela de uma selfie?  ;)</h2>
+                <br>
+                <digi-button 
+                  [label]="'Tirar selfie de perfil'"
+                  [type]="'default'" 
+                  [rounded]="true"
+                  [light]="true"
+                  (onClickButton)="showScanner()"></digi-button>  
+              </section> 
+            </div>
+          </div> 
+        </div>
+      </section>
+  </div>
+</section>
+
+<camera-native 
+  [maskType]="'profile'"
+  [show]="showCamera"></camera-native>

@@ -1,17 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AngularFireModule } from 'angularfire2';
+import { AppComponent } from './app.component';
+import { AppRouting } from './app.routing';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
-import { AppComponent } from './app.component';
-import { AppRouting } from './app.routing';
-import { LoginModule } from './pages/login/login.module';
-
+import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 
+import { LoginModule } from './pages/login/login.module';
 
 @NgModule({
   declarations: [

@@ -1,0 +1,18 @@
+<ul class="list">
+  <li class="list-item" *ngFor="let item of items" (click)="onClickItem(item)">
+    <div class="container-fluid no-padding">
+      <div class="row middle-xs no-margin">
+        <section [hidden]="!item.iconLeft" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 center-xs">
+          <i class="list-icon material-icons">{{ item.iconLeft }}</i>
+        </section>
+        <section class="col-lg col-md col-sm col-xs start-xs">
+          <h1 class="font-h4 font-light color-dark-gray">{{ item.title }}</h1>
+          <h1 class="font-h1 font-normal color-dark-gray">{{ item.subtitle }}</h1>
+        </section> 
+        <section [hidden]="!item.iconRight" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 start-xs">
+          <i class="list-icon material-icons">{{ item.iconRight }}</i>
+        </section>
+      </div>
+    </div> 
+  </li>
+</ul>
