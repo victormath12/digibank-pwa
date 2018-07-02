@@ -37,4 +37,6 @@
 
 <camera-native 
   [maskType]="'scanner'"
-  [show]="showCamera"></camera-native>
+  [show]="showCamera"
+  [cameraType]="'back'"
+  (outputImage)="getImageData($event)"></camera-native>

@@ -14,6 +14,9 @@ export class CameraNativeComponent implements AfterViewInit {
   @Input()
   maskType: any;
 
+  @Input()
+  cameraType: any; //back or front
+
   @ViewChild('camera')
   videoPlayer: any;
 
@@ -37,13 +40,14 @@ export class CameraNativeComponent implements AfterViewInit {
     this.photoTaked = true;
     this.outputImage.emit({
       photoTaked: true,
-      imageBase64: this.contextCanvas.toDataURL('img/png')
+      imageBase64: this.contextCanvas.toDataURL
     });
+    this.photoTaked = false;
   }
 
   private initCamera() {
     this.contextCanvas = this.canvas.nativeElement.getContext('2d');
-    this.webRTC.initCameraStream()
+    this.webRTC.initCameraStream(this.cameraType)
       .then(stream => {
         this.videoPlayer.nativeElement.src = stream;
         this.videoPlayer.nativeElement.srcObject = stream;

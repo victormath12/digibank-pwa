@@ -17,4 +17,9 @@ export class ProfileComponent implements OnInit {
     this.showCamera = true;
   }
 
+  getImageData($event) {
+    console.log($event);
+    this.showCamera = false;
+  }
+
 }

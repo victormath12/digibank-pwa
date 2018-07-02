@@ -10,6 +10,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 import { LoginModule } from './pages/login/login.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { LoginModule } from './pages/login/login.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     LoginModule,
     AppRouting,
     AngularFireModule.initializeApp(environment.firebase),

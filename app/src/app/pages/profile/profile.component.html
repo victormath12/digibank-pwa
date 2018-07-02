@@ -39,4 +39,6 @@
 
 <camera-native 
   [maskType]="'profile'"
-  [show]="showCamera"></camera-native>
+  [show]="showCamera"
+  [cameraType]="'front'"
+  (outputImage)="getImageData($event)"></camera-native>

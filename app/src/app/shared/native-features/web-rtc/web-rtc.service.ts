@@ -20,10 +20,25 @@ export class WebRTCService {
     return navigator.mediaDevices.enumerateDevices();
   }
 
-  initCameraStream(): Promise<MediaStream> {
-    if(this.verifyWebRTCSupport())
-      return navigator.mediaDevices.getUserMedia({ video: true });
-    else{
+  initCameraStream(cameraType): Promise<MediaStream> {
+    if(this.verifyWebRTCSupport()){
+
+      navigator.mediaDevices.enumerateDevices().then( result => {
+        console.log(result)
+      });
+
+      console.log(navigator.mediaDevices.getSupportedConstraints());
+
+      switch (cameraType) {
+        case 'back':
+         return navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "environment" } } });
+        case 'front':
+         return navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "user" } } });
+        default:
+         return navigator.mediaDevices.getUserMedia({ video: true });
+       }
+
+    }else{
       return Promise.reject('Sem suporte ao WebRTC');
     }
   }

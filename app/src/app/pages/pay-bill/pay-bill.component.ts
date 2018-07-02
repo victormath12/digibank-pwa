@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WebRTCService } from '../../shared/native-features/web-rtc/web-rtc.service';
 
 @Component({
   selector: 'digi-pay-bill',
@@ -9,12 +10,17 @@ export class PayBillComponent implements OnInit {
 
   showCamera: boolean;
 
-  constructor() { }
+  constructor(private webRTC: WebRTCService) { }
 
   ngOnInit() {  }
 
   showScanner() {
     this.showCamera = true;
+  }
+
+  getImageData($event) {
+    console.log($event);
+    this.showCamera = false;
   }
 
 }

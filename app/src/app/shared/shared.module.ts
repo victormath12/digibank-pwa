@@ -10,6 +10,7 @@ import { AlertComponent } from './components/alert/alert.component';
 import { CameraNativeComponent } from './native-features/camera-native/camera-native.component';
 import { PushNotificationService } from './native-features/push-notification/push-notification.service';
 import { InputComponent } from './components/input/input.component';
+import { GeolocationService } from './native-features/geolocation/geolocation.service';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { InputComponent } from './components/input/input.component';
   ],
   providers: [
     WebRTCService,
-    PushNotificationService
+    PushNotificationService,
+    GeolocationService
   ],
   exports: [
     ButtonComponent,

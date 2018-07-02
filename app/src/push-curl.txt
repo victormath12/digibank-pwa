@@ -1,4 +1,5 @@
 curl https://fcm.googleapis.com/fcm/send \
      -H "Content-Type: application/json" \
      -H "Authorization: key=AAAAYNYjGqw:APA91bHLvR9leKOSGMWr3snhvG2XFrLcMKd6FsR3mudYK8jDK0TO3wz8oBOV-QhU4QV3xs9WCZ0I_ZyXfH5vnKchhHklVUXnfQijvc7XpfN5_a-kEcFmLegQRcUvYK7UhRYmyhEHAC5g" \
-     -d '{ "notification": {"title": "Test title", "body": "TESTANDO NOVAMERNTEW", "click_action" : "https://angularfirebase.com"},"to" : "fJQW0-3JgXU:APA91bHAB60HlXuc-W9EXQ8ougNiMzBd2Mppm2EAot5i-kSc3Euv8aX_mzeB9eezgUfRrSAj8LWmty7z-swq_i0UqN8eQ8APLEig9L0KvscqyQsezskd9yJbp1xq4DbVuMpRHMMP_0sM"}'
+     -d '{ "notification": {"title": "Digibank", "body": "Sua Transferência foi recebida com sucesso :)", "click_action" : "https://angularfirebase.com"},
+     "to" : "fPpU8VNxoeI:APA91bFguaipKUoXyl-0BpwHf4pfejf1lf777z009mmupUsJQ1m2cLf8UJ1126GUlBXNr8Nmf7On2aoP15TAa84jOtnfCB9Gi-PjgKm1jcYOCALZUyC7QyQeIdJgNuMTqXfcnXcuaOsV"}'
