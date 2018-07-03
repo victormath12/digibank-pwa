@@ -8,7 +8,7 @@
   <div class="welcome-page-title col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="box-row middle-xs">
       <h1 class="font-h3 font-light color-white">seja bem vindo,</h1>
-      <h1 class="font-h1x font-light color-white">Victor Caetano_</h1>
+      <h1 class="font-h1x font-light color-white">{{ currentUser?.displayName }}</h1>
     </div>
   </div>
   
@@ -16,16 +16,13 @@
 
 <section class="container-fluid">
   <div class="row">
-    <section class="col-lg-8 col-md-6 col-sm-12 col-xs-12 no-padding" style="background: #fff;">
-      <!-- Grafico Saldo -->
-    </section>
     <section class="col-lg-4 col-md-6 col-sm-12 col-xs-12 no-padding">
       <div class="card">
         <div class="container-fluid no-padding">
           <div class="row middle-xs no-margin">
             <section class="col-lg col-md col-sm col-xs center-xs">
               <h1 class="font-h4 font-light color-dark-gray">seu saldo atual</h1>
-              <h1 class="font-h1 font-normal color-dark-gray">R$ 1.200,00</h1>
+              <h1 class="font-h1 font-normal color-dark-gray">R$ 21.300,00</h1>
             </section> 
           </div>
         </div> 
@@ -34,90 +31,3 @@
     </section>
   </div>
 </section>
-
-<!-- 
-<span class="alert" (click)="hideAlert()"> Teste de Alerta </span> -->
-
-
-<!-- 
-<main>
-
-  <section class="page-title">
-    <h1>Seja Bem Vindo,</h1>
-    <h2>Victor Caetano_</h2>
-  </section>
-
-  <section class="card">
-    <span class="card-content">
-      <h3 class="font-h4 font-bold font-align-left">
-        saldo em <br> conta corrente
-      </h3>
-      <h3 class="font-h1 font-normal color-green font-align-left">
-        R$ 500,00
-      </h3>
-    </span>
-  </section>
-
-  <section>
-    <h3 class="font-h4 font-bold font-align-left color-half-gray">
-      o que você deseja fazer?
-    </h3>
-  </section>
-  
-  <section class="card">
-    <span class="card-before">
-      <i class="material-icons">reorder</i>
-    </span>
-    <span class="card-content">
-      <h3 class="card-title">
-        Tirar uma Foto com a Camera Nativa
-      </h3>
-    </span>
-    <input type="file" accept="image/*" id="capture" capture="camera" (change)="onCapture($event)"> 
-  </section>
-
-  <section class="card" routerLink="/camera-capture">
-    <span class="card-before">
-      <i class="material-icons">account_circle</i>
-    </span>
-    <span class="card-content">
-      <h3 class="card-title">
-        Adicionar uma foto de perfil
-      </h3>
-    </span>
-  </section>
-
-  <section class="card" routerLink="/camera-capture">
-    <span class="card-before">
-      <i class="material-icons">account_circle</i>
-    </span>
-    <span class="card-content">
-      <h3 class="card-title">
-        Pagar boleto por código de barras
-      </h3>
-    </span>
-  </section>
-
-  <section class="card" (click)="push()" >
-    <span class="card-before">
-      <i class="material-icons">notifications</i>
-    </span>
-    <span class="card-content">
-      <h3 class="card-title">
-        Push Notifications
-      </h3>
-    </span>
-  </section>
-
-  <span class="alert" [hidden]="!alertMsg" (click)="hideAlert()">
-    {{ alertMsg }}
-  </span>
-
-
-  <digi-button 
-    [label]="'Entrar com minha Conta'"
-    [type]="'default'" 
-    [rounded]="true"
-    [light]="true"></digi-button>
-
-</main> -->

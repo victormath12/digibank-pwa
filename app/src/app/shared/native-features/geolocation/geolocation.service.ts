@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class GeolocationService {
 
-  private GOOGLE_API_URL = 'http://maps.googleapis.com/maps/api/geocode/json';
+  private GOOGLE_API_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
 
   private GEOLOCATION_ERRORS = {
     'errors.location.unsupportedBrowser': 'Browser does not support location services',

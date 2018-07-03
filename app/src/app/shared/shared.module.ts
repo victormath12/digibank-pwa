@@ -11,6 +11,7 @@ import { CameraNativeComponent } from './native-features/camera-native/camera-na
 import { PushNotificationService } from './native-features/push-notification/push-notification.service';
 import { InputComponent } from './components/input/input.component';
 import { GeolocationService } from './native-features/geolocation/geolocation.service';
+import { FireAuthService } from './native-features/fire-auth/fire-auth.service';
 
 @NgModule({
   imports: [
@@ -22,12 +23,13 @@ import { GeolocationService } from './native-features/geolocation/geolocation.se
     ListComponent,
     AlertComponent,
     CameraNativeComponent,
-    InputComponent
+    InputComponent,
   ],
   providers: [
     WebRTCService,
     PushNotificationService,
-    GeolocationService
+    GeolocationService,
+    FireAuthService
   ],
   exports: [
     ButtonComponent,

@@ -8,9 +8,8 @@
           <div class="row middle-xs no-margin">
             <section class="col-lg col-md col-sm col-xs">
               <h1 class="font-h2 font-normal">Minhas infos</h1>
-              <h3 class="font-h4 font-light">Nome: Victor Caetano</h3>
-              <h3 class="font-h4 font-light">Agencia: 1234</h3>
-              <h3 class="font-h4 font-light">Conta: 1234-8</h3>
+              <h3 class="font-h4 font-light">Nome: {{ currentUser?.displayName }}</h3>
+              <h3 class="font-h4 font-light">Email: {{ currentUser?.email }}</h3>
               <h3 class="font-h4 font-light">Cliente desde: 2012</h3>
             </section>
           </div>
@@ -28,7 +27,7 @@
                   [type]="'default'" 
                   [rounded]="true"
                   [light]="true"
-                  (onClickButton)="showScanner()"></digi-button>  
+                  (onClickButton)="showSelfieCamera()"></digi-button>  
               </section> 
             </div>
           </div> 

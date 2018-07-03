@@ -38,7 +38,7 @@ export class PushNotificationService {
 
   updateToken(token) {
     this.afAuth.authState.take(1).subscribe(user => {
-      const data = { '3o9wvPQ3p2S0PbsofntF3VJ5A062': token }
+      const data = { [user.uid]: token }
       console.log(data);
       this.db.object('fcmTokens/').update(data)
     })

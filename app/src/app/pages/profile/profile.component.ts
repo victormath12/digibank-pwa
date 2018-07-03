@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FireAuthService } from '../../shared/native-features/fire-auth/fire-auth.service';
 
 @Component({
   selector: 'digi-profile',
@@ -8,12 +9,27 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
 
   showCamera: boolean;
+
+  currentUser: any;
   
-  constructor() { }
+  constructor(private auth: FireAuthService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.getCurrentUserData();
+  }
 
-  showScanner() {
+  getCurrentUserData() {
+    this.auth.getCurrentUser().subscribe(
+      (user) => { 
+        this.currentUser = user;
+        console.log(user);
+        if(!this.currentUser || this.currentUser === null)
+          this.auth.signInByGoogle();
+      }, (error) => console.log(error)
+    );
+  }
+
+  showSelfieCamera() {
     this.showCamera = true;
   }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FireAuthService } from '../../shared/native-features/fire-auth/fire-auth.service';
 
 @Component({  
   selector: 'home',
@@ -14,17 +15,29 @@ export class HomeComponent implements OnInit {
 
   menuList: Array<any>;
 
-  constructor(private router: Router) {}
+  currentUser: any;
+
+  constructor(private router: Router, private auth: FireAuthService) {}
 
   ngOnInit() {
+    this.getCurrentUserData();
     this.menuList = [
-      { iconLeft: 'profile', title: 'Meu Perfil', link: '/profile' },
-      { iconLeft: 'crop_free', title: 'Pagar Boleto com scanner', link: '/pay-bill' },
-      { iconLeft: 'vertical_align_top',title: 'Transferir dinheiro',link: '/send-money' },
-      { iconLeft: 'vertical_align_bottom', title: 'Receber dinheiro', link: '/receive-money' },
-      { iconLeft: 'credit_card', title: 'Meus gastos no cartão', link: '/' },
+      { iconLeft: 'face', title: 'Meu Perfil', link: '/profile' },
+      { iconLeft: 'crop_free', title: 'Pagar Boleto', link: '/pay-bill' },
+      { iconLeft: 'vertical_align_top',title: 'Treansferência',link: '/send-money' },
       { iconLeft: 'location_on', title: 'Agências próximas a mim', link: '/near-branches' }
     ];
+  }
+
+  getCurrentUserData() {
+    this.auth.getCurrentUser().subscribe(
+      (user) => { 
+        this.currentUser = user;
+        console.log(user);
+        if(!this.currentUser || this.currentUser === null)
+          this.auth.signInByGoogle();
+      }, (error) => console.log(error)
+    );
   }
 
 }

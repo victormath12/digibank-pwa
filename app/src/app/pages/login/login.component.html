@@ -2,16 +2,24 @@
 
  <digi-header [transparent]="true" label="digibank" [returnTo]="'/'"></digi-header>
 
- <digi-button 
-    [label]="'Entrar com minha Conta'"
-    [type]="'default'" 
-    [rounded]="false"
-    (onClickButton)="navigateToHome()"></digi-button>
+ <section class="app-logo">
+    <img src="./assets/images/logo.png" alt="logo digibank" />
+ </section>
 
-<digi-button 
-    [label]="'Abrir uma nova Conta'"
-    [type]="'blank'" 
-    [rounded]="false"
-    (onClickButton)="navigateToHome()"></digi-button>
+ <section [hidden]="!currentUser">
+    <digi-button 
+      [label]="'Entrar como ' + currentUser?.displayName"
+      [type]="'blank'" 
+      [rounded]="false"
+      (onClickButton)="navigateToHome()"></digi-button>
+ </section>
+
+ <section [hidden]="currentUser">
+    <digi-button 
+      [label]="'Acessar com minha Conta'"
+      [type]="'default'" 
+      [rounded]="false"
+      (onClickButton)="signIn()"></digi-button>
+ </section>
 
 </section>

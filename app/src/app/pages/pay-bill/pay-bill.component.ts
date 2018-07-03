@@ -10,6 +10,8 @@ export class PayBillComponent implements OnInit {
 
   showCamera: boolean;
 
+  valueBarcode: string;
+
   constructor(private webRTC: WebRTCService) { }
 
   ngOnInit() {  }
@@ -18,9 +20,14 @@ export class PayBillComponent implements OnInit {
     this.showCamera = true;
   }
 
+  onPay($event){
+    alert("Boleto Pago com sucesso!");
+  }
+
   getImageData($event) {
     console.log($event);
     this.showCamera = false;
+    this.valueBarcode = '123456789123456';
   }
 
 }

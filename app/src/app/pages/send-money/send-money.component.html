@@ -27,10 +27,11 @@
           [type]="'default'" 
           [rounded]="true"
           [light]="true"
-          (onClickButton)="showNotification('Teste Notification Fixo')"></digi-button>  
+          (onClickButton)="onSendMoney($event)"></digi-button>  
 
-
-          {{ message | async | json }}
+          <div [hidden]="!message.value">
+            {{ message | async | json }}
+          </div>
 
       </section>
 

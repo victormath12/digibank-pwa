@@ -8,7 +8,7 @@ import { PushNotificationService } from '../../shared/native-features/push-notif
 })
 export class SendMoneyComponent implements OnInit {
 
-  message;
+  message: any;
 
   constructor(private pushService: PushNotificationService) { }
 
@@ -18,13 +18,8 @@ export class SendMoneyComponent implements OnInit {
     this.message = this.pushService.currentMessage;
   }
 
-  showNotification(pushMessage) {
-    Notification.requestPermission(function (permission) {
-      alert("Permition: " + permission);
-      if (permission === "granted") {
-        var notification = new Notification(pushMessage);
-      }
-    });
+  onSendMoney(event) {
+    alert("Valor Transferido! Quando cair na conta do destinatário te enviaremos uma mensagem ;)");
   }
 
 }

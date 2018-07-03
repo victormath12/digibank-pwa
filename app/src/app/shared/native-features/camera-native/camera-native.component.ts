@@ -54,6 +54,7 @@ export class CameraNativeComponent implements AfterViewInit {
         this.videoPlayer.nativeElement.play();
       }).catch(error => {
         alert('[Ocorreu um erro]: ' + error);
+        console.log(error);
       });
   } 
 

@@ -9,7 +9,8 @@
             <section class="col-lg col-md col-sm col-xs">
               <form class="digi-form">
                 <digi-input 
-                  [label]="'código de barras do boleto:'"></digi-input>
+                  [label]="'código de barras do boleto:'"
+                  [value]="valueBarcode"></digi-input>
               </form>
             </section> 
           </div>
@@ -30,7 +31,8 @@
         [label]="'Pagar Agora'"
         [type]="'default'" 
         [rounded]="true"
-        [light]="true"></digi-button>  
+        [light]="true"
+        (onClickButton)="onPay($event)"></digi-button>  
      </section>
   </div>
 </section>

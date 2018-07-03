@@ -29,6 +29,8 @@ export class WebRTCService {
 
       console.log(navigator.mediaDevices.getSupportedConstraints());
 
+      console.log(cameraType);
+
       switch (cameraType) {
         case 'back':
          return navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "environment" } } });
