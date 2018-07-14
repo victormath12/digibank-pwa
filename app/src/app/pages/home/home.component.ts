@@ -1,60 +1,43 @@
-import { AngularFireAuth } from 'angularfire2/auth';
 import { Component, OnInit } from '@angular/core';
-import { PushNotificationService } from './../../native/push-notification/push-notification-service.service';
-import * as firebase from 'firebase';
 import { Router } from '@angular/router';
+import { FireAuthService } from '../../shared/native-features/fire-auth/fire-auth.service';
 
-@Component({
+@Component({  
   selector: 'home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
-  title = 'Digibank';
   alertMsg: string;
-  usuarioLogado: any;
+
   message: any;
 
-  constructor(
-    private router: Router,
-    private pushService: PushNotificationService,
-    private fireAuth: AngularFireAuth
-  ) {}
+  menuList: Array<any>;
 
-  ngOnInit() {}
+  currentUser: any;
 
-  onCapture (capture) {
-    this.alertMsg = 'Imagem Capturada: ' + capture.target.value;
+  constructor(private router: Router, private auth: FireAuthService) {}
+
+  ngOnInit() {
+    this.getCurrentUserData();
+    this.menuList = [
+      { iconLeft: 'face', title: 'Meu Perfil', link: '/profile' },
+      { iconLeft: 'crop_free', title: 'Pagar Boleto', link: '/pay-bill' },
+      { iconLeft: 'vertical_align_top',title: 'Treansferência',link: '/send-money' },
+      { iconLeft: 'location_on', title: 'Agências próximas a mim', link: '/near-branches' }
+    ];
   }
 
-  hideAlert () {
-    this.alertMsg = undefined;
-  }
-
-  gotoLogin() {
-    this.router.navigate(['/']);
-  }
-
-  login() {
-    this.fireAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then((result) => {
-      console.log('Firebase User: ', result.user);
-      this.usuarioLogado = {
-        nome: result.user.displayName,
-        email: result.user.email,
-        telefone: result.user.phoneNumber,
-        avatar: result.user.photoURL,
-      };
-      console.log(this.usuarioLogado);
-    }).catch((error) => {
-      console.log('Erro ao Autenticar: ', error);
-    });
-  }
-
-  push() {
-    this.pushService.getPermission();
-    this.pushService.receiveMessage();
-    this.message = this.pushService.currentMessage;
+  getCurrentUserData() {
+    this.auth.getCurrentUser().subscribe(
+      (user) => { 
+        this.currentUser = user;
+        console.log(user);
+        if(!this.currentUser || this.currentUser === null)
+          this.auth.signInByGoogle();
+      }, (error) => console.log(error)
+    );
   }
 
 }

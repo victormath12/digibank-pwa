@@ -1,0 +1,51 @@
+.card {
+
+  background: $color-white;
+  margin: 20px 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid $color-snow;
+  box-shadow: 0 1px 20px 0px rgba(202, 202, 202, 0.4);
+
+  .card-icon {
+    font-size: 30px;
+    color: $color-primary;
+  }
+}
+
+
+/* .card {
+  overflow:hidden;
+  margin:20px 0px;
+  padding:15px;
+  background:#fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 1px 20px 0px rgba(202, 202, 202, 0.4);
+ }
+ 
+ .card-before{
+  width: 8%;
+  margin: 0px;
+  padding: 6px 23px 0px 0px;
+  float: left;
+  text-align: center;
+ }
+ 
+ .card-before i {
+  font-size: 33px;
+  color: #F36F00;
+ }
+ 
+ .card-content {
+  float: left;
+  color: #666;
+  text-align:center;
+  font-weight: 300;
+ }
+ 
+ .card-title {
+  color: #555;
+  text-align: left;
+  font-weight: 300;
+ } */

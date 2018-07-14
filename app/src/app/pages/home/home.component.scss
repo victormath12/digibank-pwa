@@ -1,0 +1,10 @@
+@import '../../../styles';
+
+.welcome-page {
+  background: $gradient-primary;
+  padding-bottom: 30px; 
+
+  .welcome-page-title {
+    padding-top:40px;
+  } 
+}

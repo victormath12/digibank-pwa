@@ -1,3 +1,25 @@
 <section class="content">
- <button class="button-login" routerLink="home">Acessar Minha Conta</button>
+
+ <digi-header [transparent]="true" label="digibank" [returnTo]="'/'"></digi-header>
+
+ <section class="app-logo">
+    <img src="./assets/images/logo.png" alt="logo digibank" />
+ </section>
+
+ <section [hidden]="!currentUser">
+    <digi-button 
+      [label]="'Entrar como ' + currentUser?.displayName"
+      [type]="'blank'" 
+      [rounded]="false"
+      (onClickButton)="navigateToHome()"></digi-button>
+ </section>
+
+ <section [hidden]="currentUser">
+    <digi-button 
+      [label]="'Acessar com minha Conta'"
+      [type]="'default'" 
+      [rounded]="false"
+      (onClickButton)="signIn()"></digi-button>
+ </section>
+
 </section>

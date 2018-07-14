@@ -120,13 +120,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "",
+      "digi",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      ""
+      "digi"
     ],
     "no-output-on-prefix": true,
     "use-input-property-decorator": true,

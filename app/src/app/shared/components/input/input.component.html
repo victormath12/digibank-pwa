@@ -1,0 +1,5 @@
+<label class="digi-input-label font-h4 font-light">{{ label }}</label>
+<div class="digi-input-content">
+  <span [hidden]="!prefix" class="digi-input-prefix font-h1 font-light">{{ prefix }}</span>
+  <input type="text" class="digi-input font-h1 font-light" [attr.value]="value" [attr.placeholder]="placeholder">
+</div>

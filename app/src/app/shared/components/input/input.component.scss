@@ -1,0 +1,27 @@
+.digi-input-label {
+  width: 100%;
+}
+
+.digi-input-content {
+  width: 100%;
+  margin-top: 10px;
+
+  .digi-input-prefix {
+    width: 20%;
+    height: 20px;
+  }
+
+  .digi-input {
+    width: 60%;
+    height: 20px;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    border-bottom: 1px solid #aaa;
+  }
+
+  .digi-input:focus {
+    outline: none;
+    border-bottom: 2px solid #F36F00;
+  }
+}

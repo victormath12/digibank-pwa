@@ -1,0 +1,5 @@
+curl https://fcm.googleapis.com/fcm/send \
+     -H "Content-Type: application/json" \
+     -H "Authorization: key=AAAAYNYjGqw:APA91bHLvR9leKOSGMWr3snhvG2XFrLcMKd6FsR3mudYK8jDK0TO3wz8oBOV-QhU4QV3xs9WCZ0I_ZyXfH5vnKchhHklVUXnfQijvc7XpfN5_a-kEcFmLegQRcUvYK7UhRYmyhEHAC5g" \
+     -d '{ "notification": {"title": "Digibank", "body": "Sua Transferência foi recebida com sucesso :)", "click_action" : "https://angularfirebase.com"},
+     "to" : "e1kgHR4JDes:APA91bFR52eOOXpuMMLvXb2870eQ_SeaP7VAPdRncCO_62ukJzWFbxzfoKV5txvS7I17dCPTcPFoqkIAxFj66f6SnWUy0oXGFjDmD_9ckwZ8DG3R-ysFzryEQsFhvqV3QxXPhI5PQx-E"}'

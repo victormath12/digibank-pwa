@@ -1,0 +1,25 @@
+<section class="digi-camera-content" [hidden]="!show">
+  <section class="mask-container row top-xs">
+    <div class="mask-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+      <div class="{{ maskType }}"></div>
+
+      <div class="row center-xs">
+        <div [hidden]="photoTaked" style="width:100%;">
+          <video #camera class="camera" autoplay playsinline></video>
+        </div>
+        <canvas #viewer [hidden]="true"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section class="row center-xs">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+      <div class="camera-actions" (click)="takePhoto()">
+        <button [hidden]="photoTaked" class="buttonCamera">
+          <i class="material-icons">camera_alt</i>
+        </button>
+      </div>
+    </div>
+  </section>  
+</section>

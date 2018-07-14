@@ -1,0 +1,18 @@
+<header class="header container-fluid" [ngClass]="{ 'transparent': transparent, 'default': !transparent, 'fixed': fixed }">
+  <div class="container-fluid">
+    <div class="row middle-xs">
+      <section class="col-lg-2 col-md-2 col-sm-2 col-xs-2 start-xs" (click)="onClickIconBack()">
+        <div class="row container-fluid no-padding">
+          <i class="header-icon material-icons">keyboard_arrow_left</i>
+        </div>
+      </section>
+      <section class="col-lg col-md col-sm col-xs center-xs">
+        <h1 class="font-p font-normal">{{ label }}</h1>
+      </section> 
+      <section class="col-lg-2 col-md-2 col-sm-2 col-xs-2 end-xs">
+        <div class="row container-fluid"></div>
+      </section>
+    </div> 
+  </div>
+</header>
+<div [ngClass]="{ 'space': addSpace }"></div>

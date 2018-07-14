@@ -1,65 +1,33 @@
-<header class="header">
-    <span class="header-before" (click)="gotoLogin()">
-      <i class="material-icons">keyboard_arrow_left</i>
-    </span>
-    <span class="header-title">Digibank</span>
-    <span class="header-after"></span>
-  </header>
+<section class="welcome-page box-row top-xs">
+ 
+  <digi-header 
+    label="meu digibank"
+    [transparent]="true"
+    [returnTo]="'/'"></digi-header>
+
+  <div class="welcome-page-title col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="box-row middle-xs">
+      <h1 class="font-h3 font-light color-white">seja bem vindo,</h1>
+      <h1 class="font-h1x font-light color-white">{{ currentUser?.displayName }}</h1>
+    </div>
+  </div>
   
-<main>
+</section>
 
-  <section class="page-title">
-    <h1>Seja Bem Vindo, {{ usuarioLogado?.nome }}</h1>
-    <h2>ao seu banco digital_</h2>
-  </section>
-  
-  <section class="card">
-    <span class="card-before">
-      <i class="material-icons">reorder</i>
-    </span>
-    <span class="card-content">
-      <h3 class="card-title">
-        Tirar uma Foto com a Camera Nativa
-      </h3>
-    </span>
-    <input type="file" accept="image/*" id="capture" capture="camera" (change)="onCapture($event)"> 
-  </section>
-
-  <section class="card" routerLink="/camera-capture">
-    <span class="card-before">
-      <i class="material-icons">account_circle</i>
-    </span>
-    <span class="card-content">
-      <h3 class="card-title">
-        Adicionar uma foto de perfil
-      </h3>
-    </span>
-  </section>
-
-  <section class="card" (click)="login()">
-    <span class="card-before">
-      <i class="material-icons">verified_user</i>
-    </span>
-    <span class="card-content">
-      <h3 class="card-title">
-        Login com Google Account
-      </h3>
-    </span>
-  </section>
-
-  <section class="card" (click)="push()" >
-    <span class="card-before">
-      <i class="material-icons">notifications</i>
-    </span>
-    <span class="card-content">
-      <h3 class="card-title">
-        Push Notifications
-      </h3>
-    </span>
-  </section>
-
-  <span class="alert" [hidden]="!alertMsg" (click)="hideAlert()">
-    {{ alertMsg }}
-  </span>
-
-</main>
+<section class="container-fluid">
+  <div class="row">
+    <section class="col-lg-4 col-md-6 col-sm-12 col-xs-12 no-padding">
+      <div class="card">
+        <div class="container-fluid no-padding">
+          <div class="row middle-xs no-margin">
+            <section class="col-lg col-md col-sm col-xs center-xs">
+              <h1 class="font-h4 font-light color-dark-gray">seu saldo atual</h1>
+              <h1 class="font-h1 font-normal color-dark-gray">R$ 21.300,00</h1>
+            </section> 
+          </div>
+        </div> 
+      </div>
+      <digi-list [items]="menuList"></digi-list>
+    </section>
+  </div>
+</section>

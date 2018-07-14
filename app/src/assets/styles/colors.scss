@@ -1,0 +1,28 @@
+/*
+* Colors Pallete
+*/
+
+$color-background: #F2EAE6;
+$color-white: #FFFFFF;
+$color-snow: #EEEEEE;
+$color-black: #000000;
+$color-dark-gray: #333333;
+$color-half-gray: rgba(255, 255, 255, 0.5);
+$color-light-gray: #CCCCCC;
+
+$color-primary: #F36F00;
+$color-green: #23a045;
+
+$gradient-background: linear-gradient(-10deg, #F1F1F1 0%, rgb(220, 220, 220) 100%);
+$gradient-primary: linear-gradient(-60deg, #FC4A1A 0%, #F36F00 100%);
+
+
+.color-white { color: $color-white }
+.color-snow { color: $color-snow }
+.color-black { color: $color-black }
+.color-dark-gray { color: $color-dark-gray }
+.color-half-gray { color: $color-half-gray }
+.color-light-gray { color: $color-light-gray }
+
+.color-primary { color: $color-primary }
+.color-green { color: $color-green }
